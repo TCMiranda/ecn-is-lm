@@ -1,0 +1,31 @@
+#+OPTIONS: tex:t
+
+Código da turma Google Classroom: vj2iqc1
+
+* Economia aberta - Mundell Fleming
+
+** Equações
+
+Onde as variáveis são:
+
+Y is GDP
+C is consumption
+I is physical investment
+G is government spending (an exogenous variable)
+M is the nominal money supply
+P is the price level
+i is the nominal interest rate
+L is liquidity preference (real money demand)
+T is taxes
+NX is net exports
+
+** A curva IS:
+
+  $Y = C + I + G + NX$
+
+ - Formação de estoque
+
+** Teorema do orçamento equilibrado
+
+* Trabalho final
+  SCHEDULED: <2018-07-13 sex>

@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>project</title>
+<!-- 2018-07-09 seg 17:22 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Tiago Miranda" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  /*]]>*/-->
+</style>
+<link href="https://cdn.rawgit.com/fniessen/org-html-themes/2cacdec6/styles/readtheorg/css/rtd-full.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.rawgit.com/fniessen/org-html-themes/2cacdec6/styles/readtheorg/css/htmlize.css" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.rawgit.com/fniessen/org-html-themes/2cacdec6/styles/readtheorg/css/readtheorg.css" rel="stylesheet" type="text/css"/>
+<style>#table-of-contents::-webkit-scrollbar { background-color: transparent; width: 0px; }</style>
+<style>#content { max-width: 1000px; }</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.rawgit.com/fniessen/org-html-themes/2cacdec6/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js"></script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"], ["\\begin{displaymath}","\\end{displaymath}"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">project</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Projeto final de economia</a></li>
+<li><a href="#sec-2">2. <span class="done DONE">DONE</span> Planejamento do trabalho</a>
+<ul>
+<li><a href="#sec-2-1">2.1. A ideia do trabalho é demonstrar por meio de uma interface interações sobre um modelo economico</a></li>
+<li><a href="#sec-2-2">2.2. Usando o modelo IS LN</a></li>
+<li><a href="#sec-2-3">2.3. Ideia</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">3. <span class="done DONE">DONE</span> Resultado final da implementação do gráfico interativo <code>[6/6]</code></a></li>
+<li><a href="#sec-4">4. <span class="done DONE">DONE</span> Revisão <code>[5/5]</code></a>
+<ul>
+<li><a href="#sec-4-1">4.1. <span class="done DONE">DONE</span> Modelo IS LM</a>
+<ul>
+<li><a href="#sec-4-1-1">4.1.1. IS a curva Investment-Savings</a></li>
+<li><a href="#sec-4-1-2">4.1.2. Relações entre as variáveis do modelo:</a></li>
+<li><a href="#sec-4-1-3">4.1.3. LM - The liquidity preference and money supply curve</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">4.2. <span class="done DONE">DONE</span> Representando o modelo IS LM - Visualização das equações com Octave <code>[3/3]</code></a>
+<ul>
+<li><a href="#sec-4-2-1">4.2.1. Representando a curva IS:</a></li>
+<li><a href="#sec-4-2-2">4.2.2. Representando a curva LM:</a></li>
+<li><a href="#sec-4-2-3">4.2.3. Representando a igualdade nas equações</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-sec-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Projeto final de economia</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Definição do trabalho: <a href="https://drive.google.com/file/d/1xHk0kU3wm7U_EXZcgkRQkXjlPoGgnsK2/view">https://drive.google.com/file/d/1xHk0kU3wm7U_EXZcgkRQkXjlPoGgnsK2/view</a>
+</li>
+<li>Auxílio de tomada de decisões financeiras
+<ul class="org-ul">
+<li>Aprenda os relacionamentos para melhores decições
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> <span class="done DONE">DONE</span> Planejamento do trabalho</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-sec-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> A ideia do trabalho é demonstrar por meio de uma interface interações sobre um modelo economico</h3>
+<div class="outline-text-3" id="text-2-1">
+<ul class="org-ul">
+<li>Formatar a ideia
+</li>
+<li>Pesquisar sobre o modelo
+</li>
+<li>Encontrar uma ferramenta de visualização
+</li>
+<li>Pensar em formas de visualizar a interação
+</li>
+<li>Preparar uma estrutura do modelo em código que permita uma certa interação nas variáveis
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> Usando o modelo IS LN</h3>
+<div class="outline-text-3" id="text-2-2">
+<ul class="org-ul">
+<li>Quais as variáveis do modelo?
+</li>
+<li>Como elas interagem?
+</li>
+<li>Quais operações são possíveis de se realizar como um governo?
+</li>
+<li>Quais repercuções de cada possível ação?
+</li>
+<li>Como resolver problemas?
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> Ideia</h3>
+<div class="outline-text-3" id="text-2-3">
+<ul class="org-ul">
+<li>Gráfico interativo para visualização de interações
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> <span class="done DONE">DONE</span> Resultado final da implementação do gráfico interativo <code>[6/6]</code></h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Para desenvolver o gráfico interativo as simulações criadas com octave foram transformadas em Typescript para serem renderizadas pelo navegador.
+</p>
+
+<p>
+Checklist da implementação
+</p>
+
+<ul class="org-ul">
+<li><code>[X]</code> Converter funções do octave para Javascript / Typescript
+</li>
+<li><code>[X]</code> Criar tipo Vector e operações necessárias para implementar as funções criadas no octave
+<ul class="org-ul">
+<li><code>[X]</code> Vector
+</li>
+<li><code>[X]</code> Mapeamento de vetor
+</li>
+<li><code>[X]</code> Subtração
+</li>
+</ul>
+</li>
+<li><code>[X]</code> Encontrar uma biblioteca para plot e adicionar em gráfico as funções
+</li>
+<li><code>[X]</code> Criar interatividade no gráfico
+<ul class="org-ul">
+<li><code>[X]</code> Definir as constantes usando um Observable
+</li>
+<li><code>[X]</code> Criar os controles para alterar as constantes
+</li>
+<li><code>[X]</code> Atualizar o gráfico a cada mudança nas constantes
+</li>
+</ul>
+</li>
+<li><code>[X]</code> Formatar a UI
+</li>
+<li><code>[X]</code> Formatar o código final
+</li>
+</ul>
+
+<p>
+A seguir o resultado a implementação:
+</p>
+
+<iframe height='1350' scrolling='no' title='Simulação IS-LM' src='https://codepen.io/TCMiranda/embed/bKJaMV/?height=265&theme-id=light&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%; margin-bottom: 100px;'>See the Pen <a href='https://codepen.io/TCMiranda/pen/bKJaMV/'>Simulação IS-LM</a> by Tiago de Carvalho Miranda (<a href='https://codepen.io/TCMiranda'>@TCMiranda</a>) on <a href='https://codepen.io'>CodePen</a>.</iframe>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> <span class="done DONE">DONE</span> Revisão <code>[5/5]</code></h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><code>[X]</code> Revisar o modelo IS LM
+</li>
+<li><code>[X]</code> Organizar as equações e variáveis exógenas
+</li>
+<li><code>[X]</code> Entender a relação das variáveis nas curvas
+<ul class="org-ul">
+<li>Montar diagramas
+</li>
+</ul>
+</li>
+<li><code>[X]</code> Adicionar exemplos (plot) das curvas com octave
+<ul class="org-ul">
+<li><code>[X]</code> IS
+</li>
+<li><code>[X]</code> LM
+</li>
+</ul>
+</li>
+<li><code>[X]</code> Plot do gráfico da IS e LM com octave mascando o ponto de igualdade
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> <span class="done DONE">DONE</span> Modelo IS LM</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+O Modelo IS/LM, Modelo Keynesiano Generalizado (MKG), ou ainda Modelo Hicks-Hansen, é um instrumento para fins de análise macroeconómica de âmbito didático, cuja representação num espaço cartesiano procura ilustrar os pares ordenados de taxa de juro nominal e renda, em que temos equilíbrio de curto prazo no Mercado de Bens e Serviços e no Mercado Monetário económico, é uma formalização matemática iniciada por John Richard Hicks baseada largamente na teoria de John Maynard Keynes. A sigla IS/LM do modelo provém do inglês Investment Saving / Liquidity preference Money supply. A extensão do modelo IS/LM para uma economia aberta é conhecida por IS/LM/BP ou Modelo Mundell-Fleming.
+</p>
+
+
+<div id="fig:300px-Islm.svg.png" class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Islm.svg/300px-Islm.svg.png" alt="300px-Islm.svg.png" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Gráfico das cusrvas IS LN do modelo: disponível em <a href="https://en.wikipedia.org/wiki/IS%E2%80%93LM_model">https://en.wikipedia.org/wiki/IS%E2%80%93LM_model</a></p>
+</div>
+
+<p>
+Equação
+</p>
+
+<p>
+\(Y = C(Yd) + I(Y, r) + G + NX( )\)
+</p>
+
+<p>
+Ou ainda:
+</p>
+
+<p>
+\(Y - C(Yd) - G = I(Y, r) + NX( )\)
+</p>
+
+<p>
+Onde:
+</p>
+
+<table id="tab:basic-data" border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Variáveis do modelo econômico</caption>
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Variável</th>
+<th scope="col" class="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(Y\)</td>
+<td class="left">Renda Agregada</td>
+</tr>
+
+<tr>
+<td class="left">\(C\)</td>
+<td class="left">Consumo das famílias</td>
+</tr>
+
+<tr>
+<td class="left">\(Yd\)</td>
+<td class="left">Renda Disponível(ou seja, a diferença entre a renda agregada e a massa de impostos T = t.Y)</td>
+</tr>
+
+<tr>
+<td class="left">\(I\)</td>
+<td class="left">Investimento Agregado</td>
+</tr>
+
+<tr>
+<td class="left">\(r\) ou \(i\)</td>
+<td class="left">Taxa de juros</td>
+</tr>
+
+<tr>
+<td class="left">\(G\)</td>
+<td class="left">Dispêndios do Governo</td>
+</tr>
+
+<tr>
+<td class="left">\(NX( )\)</td>
+<td class="left">Saldo em Conta Corrente e/ou a Tranferência Líquida de Recursos Não-Fatores ao Exterior</td>
+</tr>
+
+<tr>
+<td class="left">\(S\) ou \(Y - C - G\)</td>
+<td class="left">Savings: \(Y - G - C(Y - T(Y))\) ou seja, a Renda total menos Gastos menos Consumo (que varia de acordo com os tributos)</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+The model is presented as a graph of two intersecting lines in the first quadrant.
+</p>
+
+<p>
+O gráfico do equilíbrio no modelo IS-LM tem Y na abscissa e i nas cordenadas onde i é a taxa de juros e Y o produto.
+</p>
+
+<ul class="org-ul">
+<li>IS se trata de uma curva negativamente inclinada;
+</li>
+<li>LM ao contrário, uma curva positivamente inclinada;
+</li>
+</ul>
+</div>
+
+
+<div id="outline-container-sec-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> IS a curva Investment-Savings</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+For the investment-saving curve, the independent variable is the interest rate. Ela representa todos os pontos onde:
+</p>
+
+<p>
+\(S = I\)
+</p>
+
+<p>
+Savings = Investimentos. A equação da curva também pode ser representada de forma expandida:
+</p>
+
+<p>
+\(S = I\)
+</p>
+
+<p>
+\(Y - G - C = I + NX\)
+</p>
+
+<p>
+\(Y - G - C(Y - T(Y)) = I(r) + NX(Y)\)
+</p>
+
+<p>
+Ou ainda:
+</p>
+
+<p>
+\(Y - C(Y - T(Y)) + I(r) + G + NX(Y) = 0\)
+</p>
+
+<p>
+Para as análises do modelo IS / LN, por ter o mercado fechado, \(NX = 0\):
+</p>
+
+<p>
+\(Y - G - C(Y - T(Y)) = I(r)\)
+</p>
+
+<p>
+Onde:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Valor</th>
+<th scope="col" class="left">Representa</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(C(Y-T(Y))\)</td>
+<td class="left">Consumer spending as an increasing function of disposable income</td>
+<td class="left">Quanto mais renda, mais renda disponível, mais gasto</td>
+</tr>
+
+<tr>
+<td class="left">\(I(r)\)</td>
+<td class="left">Investimento, decrescente com a taxa real de juros</td>
+<td class="left">Quanto mais jutos, menos investimento</td>
+</tr>
+
+<tr>
+<td class="left">\(G\)</td>
+<td class="left">Government spending</td>
+<td class="left">Não depende de outras variáveis</td>
+</tr>
+
+<tr>
+<td class="left">\(NX(Y) = 0\)</td>
+<td class="left">Net exports (exports minus imports) decreasing function of income</td>
+<td class="left">Quanto mais Renda, menor NX, pois importação é crescente com renda</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Considerando que as seguintes variáveis são exógenas:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Variável</th>
+<th scope="col" class="left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(C\)</td>
+<td class="left">consumption</td>
+</tr>
+
+<tr>
+<td class="left">\(G\)</td>
+<td class="left">government spending</td>
+</tr>
+
+<tr>
+<td class="left">\(EX\)</td>
+<td class="left">exports</td>
+</tr>
+
+<tr>
+<td class="left">\(IM\)</td>
+<td class="left">imports</td>
+</tr>
+
+<tr>
+<td class="left">\(Rt\)</td>
+<td class="left">real interest rate</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+E assim sendo, fazem parte das formas de interação com o modelo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-sec-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> Relações entre as variáveis do modelo:</h4>
+<div class="outline-text-4" id="text-4-1-2">
+</div><ol class="org-ol"><li><a id="sec-4-1-2-1" name="sec-4-1-2-1"></a>Gasto do consumidor<br  /><div class="outline-text-5" id="text-4-1-2-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Valor</td>
+<td class="left">Representa</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(C(Y-T(Y))\)</td>
+<td class="left">Consumer spending as an increasing function of disposable income</td>
+<td class="left">Quanto mais renda, mais renda disponível, mais gasto</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="figure">
+<p><img src="./tmp/isrelations1.png" alt="isrelations1.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="sec-4-1-2-2" name="sec-4-1-2-2"></a>Investment<br  /><div class="outline-text-5" id="text-4-1-2-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Valor</td>
+<td class="left">Representa</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(I(r)\)</td>
+<td class="left">Investimento, decrescente com a taxa real de juros</td>
+<td class="left">Quanto mais jutos, menos investimento</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="figure">
+<p><img src="./tmp/isrelations2.png" alt="isrelations2.png" />
+</p>
+</div>
+</div>
+</li>
+
+<li><a id="sec-4-1-2-3" name="sec-4-1-2-3"></a>Net Exports<br  /><div class="outline-text-5" id="text-4-1-2-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="left">Valor</td>
+<td class="left">Representa</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(NX(Y)\)</td>
+<td class="left">Net exports (exports minus imports) decreasing function of income</td>
+<td class="left">Quanto mais Renda, menor NX, pois importação é crescente com renda</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="figure">
+<p><img src="./tmp/isrelations3.png" alt="isrelations3.png" />
+</p>
+</div>
+</div>
+</li></ol>
+</div>
+
+
+<div id="outline-container-sec-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span> LM - The liquidity preference and money supply curve</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<p>
+A curva LM é gerada com dado a Renda Y que infere a taxa de juros r
+</p>
+
+<p>
+The LM function is the set of equilibrium points between the liquidity preference (or demand for money) function and the money supply function (as determined by banks and central banks).
+</p>
+
+<p>
+Each point on the LM curve reflects a particular equilibrium situation in the money market equilibrium diagram, based on a particular level of income. In the money market equilibrium diagram, the liquidity preference function is simply the willingness to hold cash balances instead of securities. For this function, the nominal interest rate (on the vertical axis) is plotted against the quantity of cash balances (or liquidity), on the horizontal. The liquidity preference function is downward sloping. Two basic elements determine the quantity of cash balances demanded (liquidity preference) and therefore the position and slope of the function:
+</p>
+
+<p>
+\(M / P = L(i, Y)\)
+</p>
+
+<p>
+Onde:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="left" />
+
+<col  class="left" />
+
+<col  class="left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="left">Variável</th>
+<th scope="col" class="left">Descrição</th>
+<th scope="col" class="left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="left">\(M\)</td>
+<td class="left">Nominal Money Supply</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(P\)</td>
+<td class="left">Price level</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(M / P\)</td>
+<td class="left">Real Money Supply</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(i\) ou \(r\)</td>
+<td class="left">Taxa de juros - interest</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(Y\)</td>
+<td class="left">Renda</td>
+<td class="left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="left">\(L\)</td>
+<td class="left">real demand for money</td>
+<td class="left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+\(M / P = L(r, Y)\)
+</p>
+
+<p>
+\(Y -> L(r, Y) - M/P\)
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-sec-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> <span class="done DONE">DONE</span> Representando o modelo IS LM - Visualização das equações com Octave <code>[3/3]</code></h3>
+<div class="outline-text-3" id="text-4-2">
+<ul class="org-ul">
+<li><code>[X]</code> Representar a curva IS
+</li>
+<li><code>[X]</code> Representar a curva LM
+</li>
+<li><code>[X]</code> Representar as curvas IS e LM definindo o equilíbrio
+</li>
+</ul>
+</div>
+
+<div id="outline-container-sec-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> Representando a curva IS:</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+\(Y - G - C(Y - T(Y)) = I(r)\)
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-octave">1; clear;
+
+#Helpers
+fixOrigin = @(i) i - min(i);
+normalizeRate = @(i) i / max(i);
+fixedRate = @(i) normalizeRate(fixOrigin(i))
+
+#IS Equations
+investment = @(r) -r;
+tributes = @(y) y / 10;
+availableIncome = @(y) y - tributes(y);
+consumption = @(y) availableIncome(y) / 2;
+interestFromIvestment = @(i) 1 - fixedRate(i);
+
+G = 2;
+Y = 0:0.1:5;
+IR = interestFromIvestment((Y - G - consumption(Y)));
+
+hf = figure(1, "visible", "off");
+plot(Y, IR);
+xlabel ("Y");
+ylabel ("r");
+title ("Curva IS");
+grid on;
+print(hf, "./tmp/is_plot.png", "-dpng");
+ans = "./tmp/is_plot.png";
+</pre>
+</div>
+
+
+<div id="fig:./tmp/is_plot.png" class="figure">
+<p><img src="./tmp/is_plot.png" alt="is_plot.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> Representando a curva LM:</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<p>
+\(M / P = L(r, Y)\)
+</p>
+
+<div class="org-src-container">
+
+<pre class="src src-octave">1; clear;
+
+#LM Equations
+market = @(r) 2 + (5 * r);
+
+MbP = 2;
+R = 0:0.01:1
+Y = market(R) - MbP;
+
+hf = figure(1, "visible", "off");
+plot(R, Y);
+xlabel ("r");
+ylabel ("Y");
+title ("Curva LM");
+grid on;
+print(hf, "./tmp/lm_plot.png", "-dpng");
+ans = "./tmp/lm_plot.png";
+</pre>
+</div>
+
+
+<div id="fig:./tmp/lm_plot.png" class="figure">
+<p><img src="./tmp/lm_plot.png" alt="lm_plot.png" />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> Representando a igualdade nas equações</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<div class="org-src-container">
+
+<pre class="src src-octave">1; clear;
+
+#Contants
+
+#Helpers
+fixOrigin = @(i) i - min(i);
+normalizeRate = @(i) i / max(i);
+fixedRate = @(i) normalizeRate(fixOrigin(i))
+
+#IS Equations
+investment = @(r) -r;
+tributes = @(y) y / 10;
+availableIncome = @(y) y - tributes(y);
+consumption = @(y) availableIncome(y) / 2;
+interestFromIvestment = @(i) fixedRate(i);
+
+#LM Equations
+market = @(r) 2 + (5 * r);
+
+#IS
+G = 2;
+IsY = 0:0.1:5;
+IsR = interestFromIvestment(investment(IsY - G - consumption(IsY)));
+
+#LM
+MbP = 2;
+LmR = 0:0.01:1
+LmY = market(LmR) - MbP;
+
+#IS Plot
+hf = figure(1, "visible", "off");
+plot(IsY, IsR);
+text(IsY(end), IsR(end), "IS");
+
+#find((IsY == LmY) == (IsR == LmR));
+#plot(round(IsY) == round(LmY));
+#plot(round(IsR) == round(LmR));
+#), "IS");
+
+#LM Plot
+hold on;
+plot(LmY, LmR);
+text(LmY(end), LmR(end), "LM");
+
+#Format
+hold on;
+plot(2.5, 0:0.05:0.5)
+text(2.65, 0.5, "Equilibrio");
+
+title("Curvas IS-LM");
+xlabel("Y");
+ylabel("r");
+#grid on;
+
+ans = "./tmp/is_lm_plot.png"; print(hf, ans, "-dpng");
+</pre>
+</div>
+
+
+<div id="fig:./tmp/is_lm_plot.png" class="figure">
+<p><img src="./tmp/is_lm_plot.png" alt="is_lm_plot.png" />
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Tiago Miranda</p>
+<p class="date">Created: 2018-07-09 seg 17:22</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 25.2.2 (<a href="http://orgmode.org">Org</a> mode 8.2.10)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
