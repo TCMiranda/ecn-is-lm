@@ -8,7 +8,6 @@
 #+HTML_HEAD: <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 #+HTML_HEAD: <script src="https://cdn.rawgit.com/fniessen/org-html-themes/2cacdec6/styles/readtheorg/js/readtheorg.js"></script>
 
-
 * Projeto final de economia
 
  - Definição do trabalho: https://drive.google.com/file/d/1xHk0kU3wm7U_EXZcgkRQkXjlPoGgnsK2/view
@@ -391,7 +390,7 @@ Causas:
   - Câmbio fixo / aberto
     - Fixo -> Variável exógena
 
-#+BEGIN_SRC mermaid :file ./tmp/c1.png
+#+BEGIN_SRC mermaid :file ./tmp/c3.png
 graph LR
   s1ma[M aumenta]-->s2rd[R diminui]
   s2rd[R diminui]-->s3ia[I aumenta]
@@ -399,15 +398,7 @@ graph LR
 #+END_SRC
 
 #+RESULTS:
-[[file:./tmp/c1.png]]
-
-#+BEGIN_SRC mermaid :file ./tmp/c2.png
-graph LR
-  a[a]-->b[b]
-#+END_SRC
-
-#+RESULTS:
-[[file:./tmp/c2.png]]
+[[file:./tmp/c3.png]]
 
  - [ ] Verificar causas de políticas de câmbio fixo e cambio flutuante
  - [ ] IS-LM in Liquidity Trap
