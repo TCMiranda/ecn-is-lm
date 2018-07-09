@@ -10,9 +10,10 @@
 
 * Projeto final de economia
 
- - Definição do trabalho: https://drive.google.com/file/d/1xHk0kU3wm7U_EXZcgkRQkXjlPoGgnsK2/view
- - Auxílio de tomada de decisões financeiras
-   - Aprenda os relacionamentos para melhores decições
+  - Repositório para contribuição: https://github.com/TCMiranda/ecn-is-lm
+  - Definição deste trabalho: https://drive.google.com/file/d/1xHk0kU3wm7U_EXZcgkRQkXjlPoGgnsK2/view
+  - Auxílio de tomada de decisões financeiras
+    - Aprenda os relacionamentos para melhores decições
 
 * DONE Planejamento do trabalho
 
